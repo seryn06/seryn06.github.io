@@ -45,8 +45,8 @@
 <meta property="og:description" content="整体情况：    得分 答对题目数 用时 排名    21 7&#x2F;22 25 分钟 前 28 %    $$设总体 X 服从 Poisson(λ)，P(X &#x3D; a)&#x3D; λ^a e^{-λ}&#x2F;a!，从中抽取独立样本 X1,…, Xn。则 λ 的极大似然估计是（）。$$       解答： 概率：固定参数 θ，把 x 当变量，描述：给定参数，不同样本出现的可能性；">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2026-07-15T05:59:47.707Z">
-<meta property="article:modified_time" content="2026-07-15T06:12:14.620Z">
+<meta property="article:published_time" content="2026-07-15T06:33:35.000Z">
+<meta property="article:modified_time" content="2026-07-15T06:49:29.824Z">
 <meta property="article:author" content="Seryn">
 <meta property="article:tag" content="华为">
 <meta property="article:tag" content="AI岗">
@@ -1014,7 +1014,7 @@ button {
   height: 64px;
 }
 .l_header .nav-sub {
-  max-width: 1080px;
+  max-width: 1440px;
   margin: auto;
 }
 .l_header .nav-sub .title {
@@ -1596,12 +1596,12 @@ ul.list-v >li>a:hover {
   right: calc(100% - 0.5 * 16px);
 }
 #wrapper {
-  max-width: 1080px;
+  max-width: 1640px;
   margin: auto;
 }
 @media screen and (min-width: 2048px) {
   #wrapper {
-    max-width: 55vw;
+    max-width: 90vw;
   }
 }
 #wrapper .menu {
@@ -1639,18 +1639,18 @@ ul.list-v >li>a:hover {
   }
 }
 .l_header {
-  max-width: 65vw;
-  left: calc((100% - 65vw) * 0.5);
+  max-width: 90vw;
+  left: calc((100% - 90vw) * 0.5);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 @media screen and (max-width: 2048px) {
   .l_header {
-    max-width: 1112px;
-    left: calc((100% - 1112px) * 0.5);
+    max-width: 1640px;
+    left: calc((100% - 1640px) * 0.5);
   }
 }
-@media screen and (max-width: 1112px) {
+@media screen and (max-width: 1472px) {
   .l_header {
     left: 0;
     border-radius: 0;
@@ -2167,7 +2167,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784095953315),
+    lastupdate: new Date(1784191216920),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2473,7 +2473,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2026-07-15T13:59:47+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2026-07-15T14:33:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2026年7月15日</p>
@@ -2936,7 +2936,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-07-15T14:12:14+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-07-15T14:49:29+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2026年7月15日</p>
@@ -3591,6 +3591,137 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false],
+          // 渲染后把原始 LaTeX 存到 mjx-container 的 data-tex，供复制按钮使用
+          storeTex: [150, (doc) => {
+            for (const m of doc.math) {
+              if (m.typesetRoot && m.math != null) {
+                m.typesetRoot.setAttribute('data-tex', m.math);
+              }
+            }
+          }, '']
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js";
+      script.defer = true;
+      script.addEventListener('load', function () {
+        if (window.MathJax && MathJax.startup) {
+          MathJax.startup.promise.then(setupMathCopy);
+        }
+      });
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 "MathJax" ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise().then(setupMathCopy);
+  }
+
+  // 公式 hover 复制按钮样式（对齐代码块 btn-copy 外观）
+  (function () {
+    if (window.__mathCopyStyle) return;
+    window.__mathCopyStyle = true;
+    var style = document.createElement('style');
+    style.textContent = [
+      'mjx-container{position:relative}',
+      'mjx-container .math-copy-btn{position:absolute;top:-1.7em;right:0;display:inline-flex;align-items:center;gap:3px;font-size:12px;line-height:1;padding:4px 7px;cursor:pointer;border:none;border-radius:4px;background:var(--color-block,#eef0f4);color:var(--color-text,#555);opacity:0;transition:opacity .15s,background .15s;user-select:none;z-index:5;white-space:nowrap}',
+      'mjx-container .math-copy-btn i{font-size:11px}',
+      'mjx-container:hover .math-copy-btn{opacity:.92}',
+      'mjx-container .math-copy-btn.copied{color:#52c41a}',
+      'mjx-container .math-copy-btn.copied-failed{color:#ff4d4f}'
+    ].join('');
+    document.head.appendChild(style);
+  })();
+
+  // 给每个公式挂上复制按钮，行为对齐代码块（COPY → COPIED）
+  function setupMathCopy() {
+    document.querySelectorAll('mjx-container').forEach(function (c) {
+      if (c.querySelector('.math-copy-btn')) return;
+      var tex = c.getAttribute('data-tex') || c.textContent || '';
+      var btn = document.createElement('button');
+      btn.className = 'math-copy-btn';
+      btn.type = 'button';
+      btn.innerHTML = '<i class="fa-solid fa-copy"></i><span>COPY</span>';
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var icon = btn.querySelector('i');
+        var span = btn.querySelector('span');
+        var reset = function () {
+          btn.classList.remove('copied', 'copied-failed');
+          icon.className = 'fa-solid fa-copy';
+          span.innerText = 'COPY';
+        };
+        var done = function () {
+          btn.classList.add('copied');
+          icon.className = 'fa-solid fa-check-circle';
+          span.innerText = 'COPIED';
+          setTimeout(reset, 2000);
+        };
+        var fail = function () {
+          btn.classList.add('copied-failed');
+          icon.className = 'fa-solid fa-exclamation-circle';
+          span.innerText = 'COPY FAILED';
+          setTimeout(reset, 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(tex).then(done, fail);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = tex;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); done(); } catch (err) { fail(); }
+          document.body.removeChild(ta);
+        }
+      });
+      c.appendChild(btn);
+    });
+  }
+</script>
+
+
+
 
 <script>
   function listenSidebarTOC() {
@@ -3725,7 +3856,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Seryn","url":"https://seryn06.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/","sameAs":["https://github.com/volantis-x"],"description":"记录学习过程"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://seryn06.github.io/","name":"Seryn"}},{"@type":"ListItem","position":2,"item":{"@id":"https://seryn06.github.io/categories/workExam/","name":"workExam"}},{"@type":"ListItem","position":3,"item":{"@id":"https://seryn06.github.io/2026/07/15/202509华为ai岗/","name":"202509华为AI岗"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Seryn","url":"https://seryn06.github.io/","keywords":null,"description":"记录学习过程","author":{"@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/","description":"记录学习过程"},"publisher":{"@type":"Organization","name":"Seryn","url":"https://seryn06.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://seryn06.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"202509华为AI岗","description":"记录学习过程","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://seryn06.github.io/2026/07/15/202509%E5%8D%8E%E4%B8%BAai%E5%B2%97/"},"author":{"@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/"},"publisher":{"@type":"Organization","name":"Seryn","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://seryn06.github.io/2026/07/15/202509%E5%8D%8E%E4%B8%BAai%E5%B2%97/","wordCount":0,"datePublished":"2026-07-15T05:59:47.707Z","dateModified":"2026-07-15T06:12:14.620Z","articleSection":"workExam","keywords":"华为,AI岗","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Seryn","url":"https://seryn06.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/","sameAs":["https://github.com/volantis-x"],"description":"记录学习过程"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://seryn06.github.io/","name":"Seryn"}},{"@type":"ListItem","position":2,"item":{"@id":"https://seryn06.github.io/categories/workExam/","name":"workExam"}},{"@type":"ListItem","position":3,"item":{"@id":"https://seryn06.github.io/2026/07/15/202509华为ai岗/","name":"202509华为AI岗"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Seryn","url":"https://seryn06.github.io/","keywords":null,"description":"记录学习过程","author":{"@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/","description":"记录学习过程"},"publisher":{"@type":"Organization","name":"Seryn","url":"https://seryn06.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://seryn06.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"202509华为AI岗","description":"记录学习过程","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://seryn06.github.io/2026/07/15/202509%E5%8D%8E%E4%B8%BAai%E5%B2%97/"},"author":{"@type":"Person","name":"Seryn","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://seryn06.github.io/"},"publisher":{"@type":"Organization","name":"Seryn","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://seryn06.github.io/2026/07/15/202509%E5%8D%8E%E4%B8%BAai%E5%B2%97/","wordCount":0,"datePublished":"2026-07-15T06:33:35.000Z","dateModified":"2026-07-15T06:49:29.824Z","articleSection":"workExam","keywords":"华为,AI岗","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
